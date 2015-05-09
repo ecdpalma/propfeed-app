@@ -1,0 +1,22 @@
+[
+  {
+    "from": "/current",
+    "to": "_list/atom/current",
+    "method": "GET",
+    "query": {}
+  },
+  {
+    "from": "/archive/:year/:month/:day",
+    "to": "_list/atom/archive",
+    "method": "GET",
+    "formats": {
+      "year": "int",
+      "month": "int",
+      "day": "int"
+    },
+    "query": {
+      "startkey": [":year", ":month", ":day"],
+      "endkey": [":year", ":month", ":day"]
+    },
+  }
+]

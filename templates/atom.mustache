@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"
+    xmlns:fh="http://purl.org/syndication/history/1.0">
+
+    <title>{{title}}</title>
+    <subtitle>{{subtitle}}</subtitle>
+    <link href="{{selfLink}}" rel="self" type="application/atom+xml" />
+    <link href="{{currentLink}}" rel="current" type="application/atom+xml"/>
+    <fh:archive/>
+    <link href="{{prevArchive}}" rel="prev-archive" type="application/atom+xml"/>
+    <link href="{{nextArchive}}" rel="next-archive" type="application/atom+xml"/>
+    <link href="{{prevArchive}}" rel="prev" type="application/atom+xml"/>
+    <link href="{{nextArchive}}" rel="next" type="application/atom+xml"/>
+    <id>{{id}}</id>
+    <updated>{{updated}}</updated>
+
+    {{#entries}}
+        <entry>
+            <id>{{id}}</id>
+            <title>{{title}}</title>
+            <link href="{{link}}" />
+            <updated>{{updated}}</updated>
+            <summary>{{summary}}</summary>
+            <category term="{{summary}}" />
+            <content type="xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    <p style="font-weight: bold">{{summary}}</p>
+                    <p>{{content}}</p>
+                </div>
+            </content>
+            {{#author?}}
+            <author>
+                <name>{{name}}{{#party}} - {{/party}}{{party}}{{#state}}/{{/state}}{{state}}</name>
+            </author>
+            {{/author?}}
+        </entry>
+    {{/entries}}
+
+</feed>

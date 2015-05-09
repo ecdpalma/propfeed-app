@@ -1,0 +1,67 @@
+var couchDbConfig = {
+    username: "",
+    password: "",
+    host: "http://127.0.0.1:5984",
+    endpoint: "http://127.0.0.1:5984/propfeed/"
+}
+
+var camaraConfig = {
+    proposicoesEndpoint: "http://www.camara.gov.br/SitCamaraWS/Proposicoes.asmx/ListarProposicoes?",
+    siglas: ["AA", "ADD", "ANEXO", "APJ", "ATA", "ATC", "ATOP", "AV", "AVN", "CAC", "CAE", "CCN", "COI", "CON",
+        "CRVITAEDOC", "CST", "CVO", "CVR", "DCR", "DEC", "DEN", "DIS", "DOC", "DTQ", "DVT", "EAG", "EMA", "EMC",
+        "EMC-A", "EMD", "EML", "EMO", "EMP", "EMPV", "EMR", "EMRP", "EMS", "EPP", "ERD", "ERD-A", "ERR", "ESB",
+        "ESP", "EXP", "IAN", "INA", "INC", "MAN", "MCN", "MMP", "MPV", "MSC", "MSF", "MSG", "MST", "MTC", "NIC",
+        "NINF", "OBJ", "OF.", "OFN", "OFS", "OFT", "P.C", "PAR", "PARF", "PCA", "PDA", "PDC", "PDN", "PDS", "PEA",
+        "PEC", "PEP", "PES", "PET", "PFC", "PIN", "PL", "PLC", "PLN", "PLP", "PLS", "PLV", "PPP", "PPR", "PR/CNJ",
+        "PR/CNMP", "PRA", "PRC", "PRF", "PRL", "PRN", "PRO", "PRP", "PRR", "PRST", "PRT", "PRV", "PRVP",
+        "PSS", "QO", "R.C", "RAT", "RCM", "RCP", "RDF", "RDV", "REC", "REL", "REM", "REP", "REQ", "RFP", "RIC",
+        "RIN", "RLF", "RLP", "RLP(R)", "RLP(V)", "RLT", "RLT/BC", "RLT/TCU", "RPA", "RPL", "RPLE", "RPLOA", "RPR",
+        "RQA", "RQC", "RQN", "RQP", "RRC", "RRL", "RST", "RTV", "SAP", "SBE", "SBE-A", "SBR", "SBT", "SBT-A", "SDL",
+        "SGM", "SIT", "SLD", "SOA", "SOR", "SPA", "SPA-R", "SPP", "SPP-R", "SRAP", "SRL", "SSP", "STF", "SUC",
+        "SUG", "SUM", "TER", "TVR", "VTS"],
+    parameters: {
+        sigla: "",
+        numero: "",
+        ano: "",
+        idTipoAutor: "",
+        parteNomeAutor: "",
+        siglaPartidoAutor: "",
+        siglaUfAutor: "",
+        generoAutor: "",
+        codEstado: "",
+        codOrgaoEstado: "",
+        emTramitacao: "",
+        datApresentacaoIni: "",
+        datApresentacaoFim: ""
+    }
+}
+
+var senadoConfig = {
+    subTiposEndpoint: "http://legis.senado.gov.br/dadosabertos/materia/subtipos",
+    proposicoesEndpoint: "http://legis.senado.leg.br/dadosabertos/materia/pesquisa/lista",
+    parameters: {
+        dataInicioApresentacao: "",
+        dataFimApresentacao: ""
+    }
+}
+var twitterConfig = {
+    consumerKey: "",
+    consumerSecret: "",
+    accessToken: "",
+    accessTokenSecret: ""
+};
+
+var googleShortenerConfig = {
+    key: ""
+};
+
+module.exports.couchDb = couchDbConfig;
+module.exports.camara = camaraConfig;
+module.exports.twitter = twitterConfig;
+module.exports.googl = googleShortenerConfig;
+module.exports.senado = senadoConfig;
+module.exports.httpHeaders = {
+    headers: {
+        'User-Agent': "propfeed"
+    }
+};
